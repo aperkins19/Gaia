@@ -14,7 +14,7 @@ GPIO.output(23, GPIO.LOW)
 
 
 time.sleep(5)
-GPIO.output(23, GPIO.HIGH)
+#GPIO.output(23, GPIO.HIGH)
 time.sleep(5)
 GPIO.output(23, GPIO.LOW)
 
