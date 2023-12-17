@@ -20,7 +20,7 @@ GPIO.output(23, GPIO.LOW)
 
 
 
-for i in range(0, 100, 1):
+for i in range(0, 3, 1):
 
     GPIO.output(18, GPIO.HIGH)
 
