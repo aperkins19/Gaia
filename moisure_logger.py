@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO  # interact with Pis pins
 import time
 
 # setup pins
-GPIO.setmode(GPIO.DCM)
+GPIO.setmode(GPIO.BCM)
 GPIO.setup(18, GPIO.OUT)
 
 # run
