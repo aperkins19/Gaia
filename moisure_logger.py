@@ -5,8 +5,20 @@ import time
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(18, GPIO.OUT)
 
+#motor sig
+GPIO.setup(23, GPIO.OUT)
+
 # run
 GPIO.output(18, GPIO.LOW)
+GPIO.output(23, GPIO.LOW)
+
+
+time.sleep(5)
+GPIO.output(23, GPIO.HIGH)
+time.sleep(5)
+GPIO.output(23, GPIO.LOW)
+
+
 
 for i in range(0, 100, 1):
 
