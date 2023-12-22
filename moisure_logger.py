@@ -1,33 +1,19 @@
-import RPi.GPIO as GPIO  # interact with Pis pins
 import time
+import board
+import busio
 
-# setup pins
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(18, GPIO.OUT)
+import adafruit_ads1x15.ads1115 as ADS
+from adafruit_ads1x15.analog_in import AnalogIn
 
-#motor sig
-GPIO.setup(23, GPIO.OUT)
+# Create the I2C bus
+i2c = busio.I2C(board.SCL, board.SDA)
 
-# run
-GPIO.output(18, GPIO.LOW)
-GPIO.output(23, GPIO.LOW)
+# Create the ADS1115 ADC instance
+ads = ADS.ADS1115(i2c)
 
+# Create an analog input channel on the ADS1115
+chan = AnalogIn(ads, ADS.P0) # Assuming you're using channel 0
 
-time.sleep(5)
-GPIO.output(23, GPIO.HIGH)
-time.sleep(5)
-GPIO.output(23, GPIO.LOW)
-
-
-
-for i in range(0, 3, 1):
-
-    GPIO.output(18, GPIO.HIGH)
-
-    time.sleep(2)
-
-    GPIO.output(18, GPIO.LOW)
-
-    time.sleep(2)
-
-GPIO.cleanup()
+while True:
+    print("Moisture Level:", chan.value, "Raw ADC Value:", chan.voltage)
+    time.sleep(1)
