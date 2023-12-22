@@ -5,7 +5,7 @@ import time
 GPIO.setmode(GPIO.BCM)
 
 # Set up the GPIO pin for output
-pin_to_test = 2  # Change to 3 for GPIO 3 test
+pin_to_test = 3  # Change to 3 for GPIO 3 test
 GPIO.setup(pin_to_test, GPIO.OUT)
 
 # Blink the LED
