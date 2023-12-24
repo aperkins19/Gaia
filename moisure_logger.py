@@ -20,7 +20,6 @@ Since the ADS1015 has a different resolution, you should ensure that your Python
 
 For an ADS1015, your script might look like this:
 
-```python
 import time
 import board
 import busio
