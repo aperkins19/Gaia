@@ -7,6 +7,7 @@ GPIO.setmode(GPIO.BCM)
 # Set up the GPIO pin for output
 pin_to_test = 3  # Change to 3 for GPIO 3 test
 GPIO.setup(pin_to_test, GPIO.OUT)
+GPIO.output(pin_to_test, GPIO.LOW)  # LED off
 
 # Blink the LED
 try:
