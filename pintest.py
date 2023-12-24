@@ -11,8 +11,10 @@ GPIO.setup(pin_to_test, GPIO.OUT)
 # Blink the LED
 try:
     while True:
+        print("High")
         GPIO.output(pin_to_test, GPIO.HIGH)  # LED on
         time.sleep(1)
+        print("Low")
         GPIO.output(pin_to_test, GPIO.LOW)   # LED off
         time.sleep(1)
 except KeyboardInterrupt:
