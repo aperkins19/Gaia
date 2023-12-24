@@ -8,7 +8,7 @@ GPIO.cleanup()  # Clean up GPIO on CTRL+C exit
 GPIO.setmode(GPIO.BCM)
 
 # Set up the GPIO pin for output
-pin_to_test = 9  # Change to 3 for GPIO 3 test
+pin_to_test =11  # Change to 3 for GPIO 3 test
 GPIO.setup(pin_to_test, GPIO.OUT)
 GPIO.output(pin_to_test, GPIO.LOW)  # LED off
 
