@@ -1,6 +1,9 @@
 import RPi.GPIO as GPIO
 import time
 
+
+GPIO.cleanup()  # Clean up GPIO on CTRL+C exit
+
 # Set the GPIO mode
 GPIO.setmode(GPIO.BCM)
 
